@@ -5,6 +5,19 @@ import os
 from dotenv import load_dotenv
 import sqlite3
 
+"""
+This script collects video game data from the RAWG Video Games Database API. It fetches game metadata such as names, genres, and ratings, and stores the results in a local SQLite database ('games.db'). 
+The API key is loaded securely from a '.env' file. 
+This script supports up to 40 games per request and structures the data using pandas for further analysis or use in recommendation systems.
+
+Usage:
+    1. Create a .env file containing your RAWG_API_KEY.
+    2. Install dependencies: pip install -r requirements.txt
+    3. Run the script: python data_collection.py
+"""
+
+
+
 #Loading environment variables from .env file
 load_dotenv()
 api_key = os.getenv('RAWG_API_KEY')
