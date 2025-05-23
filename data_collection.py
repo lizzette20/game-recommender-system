@@ -36,6 +36,16 @@ params = {
 #Making a request to the API with the parameters
 r=requests.get(api_url, params=params)
 
+#Mood-to-genre mapping to support mood-based recommendations
+mood_map = {
+    "excited": ["Racing", "Massively Multiplayer", "Sports"],
+    "happy": ["Indie", "Platformer"],
+    "curious": ["Puzzle", "Adventure"],
+    "suspenseful": ["Shooter"],
+    "immersive": ["RPG"],
+    "intense": ["Action"]
+}
+
 #Checking the request was successful
 if r.status_code == 200:
     print("Request was successful")
@@ -70,6 +80,15 @@ if r.status_code == 200:
         #Converts the list of genre names into a string seperated by commas
         game_genres = ", ".join(genre_names)
 
+        #Default mood if none matched
+        game_mood = "unknown"
+        #Checks if any of the genres match the mood_map
+        #If a match is found, assigns the corresponding mood to game_mood
+        for mood, genres in mood_map.items():
+            if any(genre in genres for genre in genre_names):
+                game_mood = mood
+                break
+
         #Prints a formatted summary of the game's name, genres, and rating
         print(f'Game Name: {game_name}, Genres: {game_genres}, Rating: {game_rating}')
 
@@ -77,7 +96,8 @@ if r.status_code == 200:
         all_games.append({
         'name': game_name,
         'genres': game_genres,
-        'rating': game_rating
+        'rating': game_rating,
+        'mood': game_mood
         })
 
     #Creating a DataFrame from the list of games
