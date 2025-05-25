@@ -78,7 +78,7 @@ demo = gr.Interface(
     fn = recommend_game, #the function running when users submit inputs 
     inputs= [
     #First input: users current mood
-    gr.Textbox(label = "How are yoy feeling today? 🎭", placeholder ="e.g., immersive, happy, curious"),
+    gr.Textbox(label = "How are you feeling today? 🎭", placeholder ="e.g., immersive, happy, curious"),
     #Second input: users preferred gaming style
     gr.Dropdown(["Action","Shooter","RPG","Puzzle","Adventure","Strategy","Any"],
                 label="Preferred Game Style (Optional) 🎮", value= "Any")
