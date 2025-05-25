@@ -1,5 +1,26 @@
 import requests 
 
+"""
+This module defines a function to generate short video game reviews using Ollama's local LLM API.
+
+It builds a custom prompt using the game's title, genre, and the user's current mood. 
+It then sends the prompt to a locally running Ollama instance and returns the generated response.
+
+Function:
+    generate_game_review(title, genre, mood)
+
+Returns:
+    A 4 to 5 sentence AI-generated review or a descriptive error message if Ollama is unreachable.
+
+Usage:
+    1. Make sure Ollama is installed and running locally.
+    2. Use the function in other scripts to fetch AI reviews.
+
+Note:
+    - The model used is defined in the POST request (e.g., "tinyllama").
+    - Ensure that 'requests' is installed and included in your environment.
+"""
+
 # generates a personalized game review using Ollama based on title, genre, and mood
 def generate_game_review(title, genre, mood):
     # builds the custom prompt we’ll send to Ollama
@@ -8,7 +29,7 @@ def generate_game_review(title, genre, mood):
     Review this game for someone who is currently in the mood: {mood}.
     Game Title: {title}
     Genre(s): {genre}
-    Provide a 4-5 sentence review that fits the mood.
+    Provide a 3-4 sentence review that fits the mood.
     """
 
 #checks if Ollama is running and API is reachable
