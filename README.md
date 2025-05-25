@@ -10,7 +10,7 @@ This project is an AI-enhanced web application that recommends video games based
 
 ## Public Web App
 You can try the deployed Gradio app here:
-**[https://874abc6a93900e9475.gradio.live](https://874abc6a93900e9475.gradio.live)**  
+**[https://5e0b437c1c7617bdcc.gradio.live](https://5e0b437c1c7617bdcc.gradio.live)**  
 (Note: This link will only work if the app is currently running with `share=True`.)
 
 ## Group Members
