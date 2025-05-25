@@ -10,7 +10,7 @@ This project is an AI-enhanced web application that recommends video games based
 
 ## Public Web App
 You can try the deployed Gradio app here:
-**[https://5e0b437c1c7617bdcc.gradio.live](https://5e0b437c1c7617bdcc.gradio.live)**  
+**[https://4d82f5da6a2c281e76.gradio.live](https://4d82f5da6a2c281e76.gradio.live)**  
 (Note: This link will only work if the app is currently running with `share=True`.)
 
 ## Group Members
@@ -76,7 +76,7 @@ games.db: Local database with game info
 requirements.txt: Python dependencies list
 
 ## Troubleshooting
-gradio not found: Make sure the virtual environment is activated, then run pip install -r requirements.txt.
+gradio not found: Make sure the virtual environment is activated, then run pip install -r requirements.txt. Note: This Gradio link is temporary and only works while the developer is running the app locally with share=True. If the link appears inactive, the app may not currently be running.
 
 Ollama errors: Confirm that Ollama is installed and running (ollama run tinyllama).
 
